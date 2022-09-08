@@ -31,24 +31,24 @@ int mynum = 0,
     mynum_prev = mynum;
     
 void loop() {
-  while (mynum < 256) {
-    int mask = 0b00000001;
-    for (int i = 0; i < ledpin_size; i++){ // step through the LED array elements
-      Serial.print("Mask is\t");
-      Serial.println(mask);
-      if (mynum & mask) {
-        Serial.print("Bit ");
-        Serial.print(i);
-        Serial.print(" is HIGH");
-        digitalWrite(ledpin[i], HIGH);
-      }
-      else {
-        digitalWrite(ledpin[i], LOW);
-      }
-      mask = mask << 1; // shift to the next bit
-    }
-    delay(500);
-    mynum++;
+  while (mynum == mynum_prev){
+    mynum = Serial.parseInt();
   }
-  mynum = 0;
+  int mask = 0b00000001;
+  for (int i = 0; i < ledpin_size; i++){ // step through the LED array elements
+    Serial.print("Mask is\t");
+    Serial.println(mask);
+    if (mynum & mask) {
+      Serial.print("Bit ");
+      Serial.print(i);
+      Serial.print(" is HIGH");
+      digitalWrite(ledpin[i], HIGH);
+    }
+    else {
+      digitalWrite(ledpin[i], LOW);
+    }
+    mask = mask << 1; // shift to the next bit
+  }
+  delay(500);
+  mynum_prev = mynum;
 }
