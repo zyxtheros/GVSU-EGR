@@ -1,6 +1,6 @@
-#define c_kinetic_pos 8 /* static friction */
+#define c_kinetic_pos 96 /* static friction */
 #define c_kinetic_neg 8 /* make the value positive */
-#define c_static_pos 8 /* kinetic friction */
+#define c_static_pos 96 /* kinetic friction */
 #define c_static_neg 8 /* make the value positive */
 #define c_max 255
 #define c_min 255 /* make the value positive */
@@ -135,7 +135,7 @@ int v_output(int v_adjusted) { /* call from the loop through IO_update*/
   if (v_adjusted >= 0) { /* set the direction bits to CW on, CCW off */
     digitalWrite(IN1, LOW);
     digitalWrite(IN2, HIGH);
-    analogWrite(EN12, count);
+    analogWrite(EN12, v_adjusted);
     if (v_adjusted > 255) { /* clip output over maximum */
       RefSignal = 255;
     }
