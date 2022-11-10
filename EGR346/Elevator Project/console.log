@@ -3,3 +3,8 @@ Message: DisplayVresionUpdatePage() sw3DPrintConnector undefined
 Source: file:///C:/Users/LUBBERTG/AppData/Local/Temp/107/swcachedir/SWMarketplaceAddin/SWVersionUpdate.html?updateRequired=True&mandatory=True&newVersion=6.30.4012
 Line: 179
 -----------------------
+Level: Info
+Message: DisplayVresionUpdatePage() sw3DPrintConnector undefined
+Source: file:///C:/Users/LUBBERTG/AppData/Local/Temp/21/swcachedir/SWMarketplaceAddin/SWVersionUpdate.html?updateRequired=True&mandatory=True&newVersion=6.30.4012
+Line: 179
+-----------------------
